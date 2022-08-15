@@ -99,7 +99,7 @@ class BudgetLimitRepository implements BudgetLimitRepositoryInterface
         $result = '0';
         /** @var BudgetLimit $budgetLimit */
         foreach ($set as $budgetLimit) {
-            $result = bcadd($budgetLimit->amount, $result);
+            $result = bcadd(strval($budgetLimit->amount), $result);
         }
 
         return $result;
